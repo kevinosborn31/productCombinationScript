@@ -150,7 +150,7 @@ const sidesOne = {
     price: 1,
     calories: 45,
     protein: 1,
-    fat: .1,
+    fat: 0.1,
     carbs: 10.2,
     ingredients: "sweet potato"
   },
@@ -158,7 +158,7 @@ const sidesOne = {
     price: 1.50,
     calories: 90,
     protein: 2,
-    fat: .2,
+    fat: 0.2,
     carbs: 20.4,
     ingredients: "sweet potato"
   },
@@ -166,7 +166,7 @@ const sidesOne = {
     price: 2,
     calories: 135,
     protein: 3,
-    fat: .3,
+    fat: 0.3,
     carbs: 30.6,
     ingredients: "sweet potato"
   },
@@ -605,7 +605,7 @@ function combineArrays( array_of_arrays ){
 
       
         // Tags
-        output += '"calories-' + calories + ', carbs-' + carbs + ', fat-' + fat + ', protein-' + proteinValue + '",' ;
+        output += '"calories-' + calories.toFixed(1) + ', carbs-' + carbs.toFixed(1) + ', fat-' + fat.toFixed(1) + ', protein-' + proteinValue.toFixed(1) + '",' ;
         // Published 
         output += 'true,' ;
         // Option1 Name 
@@ -616,7 +616,7 @@ function combineArrays( array_of_arrays ){
         output += price;
         
         //
-        output += ',,true,true,"",,,,false,,,,,,,,,,,,,,,,,kg,,\r' ;
+        output += ',,true,true,"",https://cdn.shopify.com/s/files/1/0300/5366/2813/products/performance_menu_3c44e6e6-377e-49c9-841e-0a178256608f.png?v=1597708231,1,false,,,,,,,,,,,,,,,,,kg,,\r' ;
 
     }
 

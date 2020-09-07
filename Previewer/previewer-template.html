@@ -1,0 +1,104 @@
+<div class="previewer_modal" data-behavior="previewer_modal">
+  <div class="previewer_modal-content">
+    <div class="previewer-loader--wrapper">
+      <div class="previewer-loader">
+      </div>
+    </div>
+    <div class="previewer_modal-body" style="padding: 20px;">
+
+      <div class="image-wrapper col">
+      <h2 class="product-single__title" id="modal-title" data-behavior="previewer_product_title"></h2>
+        <div class="main_image-block">
+          <img data-behavior="previewer_product_image" src="" />
+        </div>
+      </div>
+      <div class="modal-product-price">
+           <span style="font-weight: bold;" class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single card__price--sale" data-behavior="previewer_product_price"></span>
+      </div>
+            <div class="previewer_add-to-cart_wrapper">
+         <div class="qtydiv" id="modal-qty-div">
+          <div class="qtybox" data-behavior="previewer_quantity">
+            <span class="btnqty qtyminus icon icon-minus">-</span>
+            <input type="text" id="previewer_quantity" name="quantity" value="1" min="1" class="quantity-selector quantity-input qtyInput" readonly="">
+            <span class="btnqty qtyplus icon icon-plus" id="modal-qty-plus">+</span>
+          </div>
+        </div>
+          <div class="previewer_add-to-cart_btn">
+            <button class="btn btn--fill btn--regular btn--color" data-behavior="previewer_add_to_cart" id="modal-atc-button">Add to cart</button>
+          </div>
+      </div>
+      <div class="description-wrapper col">
+        <div class="description-wrapper_content">
+          <p class="product-single__price product-single__price-product-template" data-behavior="previewer_money_wrapper" style="height: 1px; margin: 0;" data-money_format="{{ shop.money_format | escape }}">
+            <s class="price-old card__price--regular" data-behavior="previewer_product_old_price"></s>
+          </p>
+          <div class="nutrition-information">
+            <div class="primary-macros">
+              <div class="macro">
+                <p>Calories</p>
+                <p id="calories"></p>
+              </div>
+              <div class="macro">
+                <p>Carbs</p>
+                <p id="carbs"></p>
+              </div>
+              <div class="macro">
+                <p>Protein</p>
+                <p id="protein"></p>
+              </div>
+              <div class="macro">
+                <p>Fat</p>
+                <p id="fat"></p>
+              </div>
+            </div>
+      <div class="secondary-macros-white">
+              <p class="macro-label">Serving Size</p><p class="macro-value" id="servingSize"></p>
+            </div>
+      <div class="secondary-macros-gray">
+              <p class="macro-label">Total Fat</p><p class="macro-value" id="totalFat"></p>
+            </div>
+      <div class="secondary-macros-white">
+              <p class="macro-label">Saturated Fat</p><p class="macro-value" id="saturatedFat"></p>
+            </div>
+      <div class="secondary-macros-gray">
+              <p class="macro-label">Sodium</p><p class="macro-value" id="sodium"></p>
+            </div>
+      <div class="secondary-macros-white">
+              <p class="macro-label">Carbohydrates</p><p class="macro-value" id="carbohydrates"></p>
+            </div>
+      <div class="secondary-macros-gray">
+              <p class="macro-label">Dietary Fibre</p><p class="macro-value" id="dietaryFibre"></p>
+            </div>
+      <div class="secondary-macros-white">
+              <p class="macro-label">Sugars</p><p class="macro-value" id="sugars"></p>
+            </div>
+      <div class="secondary-macros-gray">
+              <p class="macro-label">Protein</p><p class="macro-value" id="proteins"></p>
+
+            </div>
+          </div>
+          <div class="product-description" data-behavior="previewer_product_description"></div>
+          <div data-behavior="previewer_product_categories"></div><div class="previewer_categories"></div>
+          <div class="previewer_options" data-behavior="previewer_options">
+            <div class="inline hidden" data-position="1"><label></label></div>
+            <div class="inline hidden" data-position="2"><label></label></div>
+            <div class="inline hidden" data-position="3"><label></label></div>
+          </div>
+          <p class="error" data-behavior="previewer_cart_error"></p>
+        </div>
+      </div>
+    </div>
+    <div class="previewer-product_action previewer-product_prev" data-behavior="previewer_prev_product" title="Previous product"></div>
+    <div class="previewer-product_action previewer-product_next" data-behavior="previewer_next_product" title="Next product"></div>
+  </div>
+</div>
+<div class="fake_slick" data-url="{{ 'slick.min.js' | asset_url }}"></div>
+{% include 'product-price-listing', product: product, show_vendor: show_vendor %}       
+  {% unless product == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+  <script type="application/json" id="ModelJson-{{ section.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+{% endunless %}
