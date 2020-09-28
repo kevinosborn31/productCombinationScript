@@ -660,7 +660,7 @@ function odometer_increment( odometer, array_of_arrays ){
   let arraysCombined = combineArrays([ ["Lemon Pepper Chicken Breast_","Beef and Quinoa Meatballs_","Turkey Mince_", "Grilled Barramundi_", "Tofu_", "Tempeh_"],
                  ["100g_", "200g_", "300g_"],
                  ["Sweet Potato Mash_","Brown Rice and Quinoa_", "Roast Chat Potato_", "Basmati Rice_", "Green Beans_", "Broccoli_", "Cauliflower Rice_", "Zucchini Spaghetti_"], ["50g_", "100g_", "150g_"],
-                ["Sweet Potato Mash_","Brown Rice and Quinoa_", "Roast Chat Potato_", "Basmati Rice_", "Green Beans_", "Broccoli_", "Cauliflower Rice_", "Zucchini Spaghetti_"], ["50g_", "100g_", "150g_"], ["Peri Peri_", "Peanut Sauce_", "Teriyaki_", "Pasatta_"] ] );
+                ["Sweet Potato Mash_","Brown Rice and Quinoa_", "Roast Chat Potato_", "Basmati Rice_", "Green Beans_", "Broccoli_", "Cauliflower Rice_", "Zucchini Spaghetti_"], ["50g_", "100g_", "150g_"]] );
 
 
 
